@@ -1,56 +1,18 @@
-<form>
 
-<div class="row">
-  <div class="large-6 columns">
-    <div class="row collapse prefix-radius">
-      <div class="small-3 columns">
-          <span class ="prefix">First Name</span>
-        </div>
-        <div class="small-9 columns">
-          <input type="text" name="firstname" value="<%=@student[0][1]%>">
-        </div>
-      </div>
-    </div>
-    <div class="large-6 columns">
-    <div class="row collapse prefix-radius">
-      <div class="small-3 columns">
-          <span class ="prefix">Last Name</span>
-        </div>
-        <div class="small-9 columns">
-          <input type="text" name="lastname" value="<%=@student[0][2]%>">
-        </div>
-      </div>
-    </div>
-    <div class="large-6 columns">
-    <div class="row collapse prefix-radius">
-      <div class="small-3 columns">
-          <span class ="prefix">Email</span>
-        </div>
-        <div class="small-9 columns">
-          <input type="text" name="email" value="<%=@student[0][3]%>">
-        </div>
-      </div>
-    </div>
-    <div class="large-6 columns">
-    <div class="row collapse prefix-radius">
-      <div class="small-3 columns">
-          <span class ="prefix">Major</span>
-        </div>
-        <div class="small-9 columns">
-          <input type="text" name="major" value="<%=@student[0][4]%>">
-        </div>
-      </div>
-    </div>
-    <div class="large-6 columns">
-    <div class="row collapse prefix-radius">
-      <div class="small-3 columns">
-          <span class ="prefix">Graduation Status</span>
-        </div>
-        <div class="small-9 columns">
-          <input type="text" name="graduationstatus" value="<%=@student[0][5]%>">
-        </div>
-      </div>
-    </div>
-
-  </div>
-</form>
+<table>
+<tr>
+<th>First Name</th>
+<th>Last Name</th>
+<th>Major</th>
+<th>Email</th>
+<th>Graduated?</th>
+</tr>
+<tr>
+<td><input type="text" name="firstname" value="<%=@student[0][1]%>" readonly></td>
+<td> <input type="text" name="lastname" value="<%=@student[0][2]%>" readonly></td>
+<td> <input type="text" name="email" value="<%=@student[0][3]%>" readonly></td>
+<td> <input type="text" name="major" value="<%=@student[0][4]%>" readonly></td>
+<td> <input type="text" name="graduationstatus" value="<%=@student[0][5]%>" readonly></td>
+</tr>
+</table>
+<a href="http://localhost:4567/students" class="button small radius round">Return</a>&nbsp;

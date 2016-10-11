@@ -25,6 +25,8 @@ get'/students' do
 
 	db = DBHandler.new
 	@students = db.all
+	@studentgrads=db.allGrads
+	@studentcurrent=db.allCurrent
 	erb :application do
 		erb :index
 	end

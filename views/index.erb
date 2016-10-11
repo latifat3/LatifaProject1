@@ -1,6 +1,8 @@
 
-<a href="/students/new" class="button tiny radius round alert">Add</a>
-<%@students.each do |id, name|%>
+<p><strong> Welcome to the Carnegie Mellon University Qatar Student Tracking System! Here you can find details on all of CMUQ's students, both current and graduates. Need to change some student's information like their email address? Simply edit! Need to remove a record? Hit delete! Can't find who you're looking for? Just add them in! </strong> </p>
+<a href="/students/new" class="button large radius round alert" style="float: right;">Add A Student</a>
+<br><br><br>
+<h3 style="color: slategrey"> All Students </h3>
 <table>
   <thead>
   <th>Student</th>
@@ -8,12 +10,55 @@
 
   </thead>
   <tbody>
+  <%@students.each do |id, fname, lname|%>
 	<tr>
-		<td><a href="/students/<%=id%>"><%=name%></a>&nbsp </td>
-		<td><a href="/students/<%=id%>/edit" class="button tiny radius round">Edit</a>&nbsp
-    <a href="/students/<%=id%>" class="button tiny radius round">Show</a>&nbsp
-		<a href="/students/<%=id%>/delete" class="button tiny radius round alert">Delete</a></td>
+		<td><a href="/students/<%=id%>"><%=fname%> <%=lname%></a>&nbsp; </td>
+		<td><a href="/students/<%=id%>/edit" class="button small radius round" style="margin-left: 5px; margin-right: 5px">Edit</a>&nbsp;
+    <a href="/students/<%=id%>" class="button small radius round" style="margin-left: 5px; margin-right: 5px">Show</a>&nbsp;
+		<a href="/students/<%=id%>/delete" class="button small radius round alert" style="margin-left: 5px; margin-right: 5px">Delete</a></td>
 	</tr>
+  <%end%>
   </tbody>
 </table>
-<%end%>
+
+ <br>
+  <br>
+   <br>
+<h3 style="color: slategrey"> Students Who Graduated </h3>
+<table>
+  <thead>
+  <th>Student</th>
+  <th>Action</th>
+
+  </thead>
+  <tbody>
+  <%@studentgrads.each do |id, fname, lname|%>
+  <tr>
+    <td><a href="/students/<%=id%>"><%=fname%> <%=lname%></a>&nbsp; </td>
+    <td><a href="/students/<%=id%>/edit" class="button small radius round">Edit</a>&nbsp;
+    <a href="/students/<%=id%>" class="button small radius round">Show</a>&nbsp;
+    <a href="/students/<%=id%>/delete" class="button small radius round alert">Delete</a></td>
+  </tr>
+  <%end%>
+  </tbody>
+</table>
+ <br> <br> <br>
+<h3 style="color: slategrey"> Students Who Didn't Graduate Yet </h3>
+<table>
+  <thead>
+  <th>Student</th>
+  <th>Action</th>
+
+  </thead>
+  <tbody>
+  <%@studentcurrent.each do |id, fname, lname|%>
+  <tr>
+    <td><a href="/students/<%=id%>"><%=fname%> <%=lname%></a>&nbsp; </td>
+    <td><a href="/students/<%=id%>/edit" class="button small radius round">Edit</a>&nbsp;
+    <a href="/students/<%=id%>" class="button small radius round">Show</a>&nbsp;
+    <a href="/students/<%=id%>/delete" class="button small radius round alert">Delete</a></td>
+  </tr>
+  <%end%>
+  </tbody>
+</table>
+

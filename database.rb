@@ -79,5 +79,32 @@ def destroy(id)
 	end
 end
 
+#table of students that have already graduated
+def allGrads
+	begin
+		db = SQLite3::Database.open "student.db"
+		dbstatement = "SELECT * FROM Students WHERE graduationstatus='yes' or graduationstatus='Yes'"
+		db.execute dbstatement
+	rescue SQLite3::Exception => e
+		puts "Exception Occurred"
+		puts e
+	ensure
+		db.close if db
+	end
+end
+
+#table of students that haven't graduated yet
+def allCurrent
+	begin
+		db = SQLite3::Database.open "student.db"
+		dbstatement = "SELECT * FROM Students WHERE graduationstatus='no' or graduationstatus='No'"
+		db.execute dbstatement
+	rescue SQLite3::Exception => e
+		puts "Exception Occurred"
+		puts e
+	ensure
+		db.close if db
+	end
+end
 end
 
