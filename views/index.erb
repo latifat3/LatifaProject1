@@ -1,0 +1,19 @@
+
+<a href="/students/new" class="button tiny radius round alert">Add</a>
+<%@students.each do |id, name|%>
+<table>
+  <thead>
+  <th>Student</th>
+  <th>Action</th>
+
+  </thead>
+  <tbody>
+	<tr>
+		<td><a href="/students/<%=id%>"><%=name%></a>&nbsp </td>
+		<td><a href="/students/<%=id%>/edit" class="button tiny radius round">Edit</a>&nbsp
+    <a href="/students/<%=id%>" class="button tiny radius round">Show</a>&nbsp
+		<a href="/students/<%=id%>/delete" class="button tiny radius round alert">Delete</a></td>
+	</tr>
+  </tbody>
+</table>
+<%end%>
